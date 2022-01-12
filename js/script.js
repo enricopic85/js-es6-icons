@@ -112,17 +112,17 @@ let cardIcon=[
         color: 'blue'
     }
 ];
+
 const createCard=(data) =>{
     data.forEach(function(element) {
-        container.innerHTML +=`
-        <i class="${element.family} ${element.prefix}${element.name} ${element.color}"></i>
-        <span>${element.name.toUpperCase()}</span>
-        `
+        container.innerHTML +=`<div  class="card">
+        <i class="${element.family} ${element.prefix}${element.name} ${element.color} fs"></i>
+        <p>${element.name.toUpperCase()}</p>
+       </div>`
     })
 }
 let container=document.getElementById("container")
 let select=document.getElementById("optionSelect");
-let option=document.getElementsByTagName("option");
 
 createCard(cardIcon)
 
@@ -136,3 +136,8 @@ select.addEventListener('change',function(){
         createCard(cardIcon)
     }
 })
+
+
+
+{/* <i class="${element.family} ${element.prefix}${element.name} ${element.color}"></i>
+        <p>${element.name.toUpperCase()}</p> */}
