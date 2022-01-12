@@ -112,33 +112,27 @@ let cardIcon=[
         color: 'blue'
     }
 ];
+const createCard=(data) =>{
+    data.forEach(function(element) {
+        container.innerHTML +=`
+        <i class="${element.family} ${element.prefix}${element.name} ${element.color}"></i>
+        <span>${element.name.toUpperCase()}</span>
+        `
+    })
+}
 let container=document.getElementById("container")
 let select=document.getElementById("optionSelect");
 let option=document.getElementsByTagName("option");
-cardIcon.forEach(function(element) {
-    container.innerHTML +=`
-    <i class="${element.family} ${element.prefix}${element.name} ${element.color}"></i>
-    <span>${element.name.toUpperCase()}</span>
-    `
-})
-// let optionAll=cardIcon.filter(function(element){
-//     return element.type;
-// });
-// let optionAnimal=cardIcon.filter(function(element){
-//     return element.type==="animal"
-// });
 
-// let optionVegetable=cardIcon.filter(function(element){
-//     return element.type==="vegetable"
-// });
-// let optionUser=cardIcon.filter(function(element){
-//     return element.type==="user"
-// });
+createCard(cardIcon)
 
 select.addEventListener('change',function(){
-    
+    container.innerHTML=""
     const filtering= cardIcon.filter(function(element){
-        return option.value===element.type
+        return select.value===element.type
     })
-   console.log(filtering)
+    createCard(filtering)
+    if (select.value==="all") {
+        createCard(cardIcon)
+    }
 })
