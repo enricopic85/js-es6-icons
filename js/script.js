@@ -139,6 +139,7 @@ select.addEventListener('change',function(){
      const selection=cardIcon.filter(function(element){
          if (option.value==="user") {
             optionUser.forEach(function(element){
+                container.innerHTML=""
                 container.innerHTML +=`
             <i class="${element.family} ${element.prefix}${element.name} ${element.color}"></i>
             <span>${element.name.toUpperCase()}</span>
