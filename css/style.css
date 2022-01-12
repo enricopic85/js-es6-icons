@@ -23,6 +23,7 @@ nav{
     gap: 30px 50px;
     flex-wrap: wrap;
     height: 800px;
+    align-content: baseline;
 }
 .card{
     width: 200px;
@@ -38,4 +39,7 @@ nav{
 }
 .fs{
     font-size: 50px;
+}
+.mt{
+    margin-top: 20px;
 }

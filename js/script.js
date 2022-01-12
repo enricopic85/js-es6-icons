@@ -116,7 +116,7 @@ let cardIcon=[
 const createCard=(data) =>{
     data.forEach(function(element) {
         container.innerHTML +=`<div  class="card">
-        <i class="${element.family} ${element.prefix}${element.name} ${element.color} fs"></i>
+        <i class="${element.family} ${element.prefix}${element.name} ${element.color} mt fs"></i>
         <p>${element.name.toUpperCase()}</p>
        </div>`
     })
