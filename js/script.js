@@ -121,30 +121,24 @@ cardIcon.forEach(function(element) {
     <span>${element.name.toUpperCase()}</span>
     `
 })
-let optionAll=cardIcon.filter(function(element){
-    return element.type;
-});
-let optionAnimal=cardIcon.filter(function(element){
-    return element.type==="animal"
-});
+// let optionAll=cardIcon.filter(function(element){
+//     return element.type;
+// });
+// let optionAnimal=cardIcon.filter(function(element){
+//     return element.type==="animal"
+// });
 
-let optionVegetable=cardIcon.filter(function(element){
-    return element.type==="vegetable"
-});
-let optionUser=cardIcon.filter(function(element){
-    return element.type==="user"
-});
+// let optionVegetable=cardIcon.filter(function(element){
+//     return element.type==="vegetable"
+// });
+// let optionUser=cardIcon.filter(function(element){
+//     return element.type==="user"
+// });
 
 select.addEventListener('change',function(){
-     const selection=cardIcon.filter(function(element){
-         if (option.value==="user") {
-            optionUser.forEach(function(element){
-                container.innerHTML=""
-                container.innerHTML +=`
-            <i class="${element.family} ${element.prefix}${element.name} ${element.color}"></i>
-            <span>${element.name.toUpperCase()}</span>
-    `
-            })
-         }
-     })
+    
+    const filtering= cardIcon.filter(function(element){
+        return option.value===element.type
+    })
+   console.log(filtering)
 })
