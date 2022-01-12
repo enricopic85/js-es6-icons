@@ -114,19 +114,36 @@ let cardIcon=[
 ];
 let container=document.getElementById("container")
 let select=document.getElementById("optionSelect");
-let option=document.getElementsByTagName("option")
+let option=document.getElementsByTagName("option");
 cardIcon.forEach(function(element) {
     container.innerHTML +=`
     <i class="${element.family} ${element.prefix}${element.name} ${element.color}"></i>
     <span>${element.name.toUpperCase()}</span>
     `
 })
+let optionAll=cardIcon.filter(function(element){
+    return element.type;
+});
+let optionAnimal=cardIcon.filter(function(element){
+    return element.type==="animal"
+});
 
+let optionVegetable=cardIcon.filter(function(element){
+    return element.type==="vegetable"
+});
+let optionUser=cardIcon.filter(function(element){
+    return element.type==="user"
+});
 
 select.addEventListener('change',function(){
      const selection=cardIcon.filter(function(element){
-         if (element.type==="user") {
-             return option.value==="user"
+         if (option.value==="user") {
+            optionUser.forEach(function(element){
+                container.innerHTML +=`
+            <i class="${element.family} ${element.prefix}${element.name} ${element.color}"></i>
+            <span>${element.name.toUpperCase()}</span>
+    `
+            })
          }
      })
 })
